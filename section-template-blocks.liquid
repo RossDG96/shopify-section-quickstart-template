@@ -1,0 +1,100 @@
+
+<!-- We use section.id so we don't have to use inline css. This enables us to have multiple duplicate sections on the same page with different css settings. -->
+<style>
+.{{ section.id }}--outer{
+
+}
+.{{ section.id }}--container{
+
+}
+.{{ section.id}}--inner{
+
+}
+</style>
+
+<div class="{{ section.id }}--outer">
+  <div class="{{ section.id }}--container">
+    <div class="{{ section.id}}--inner">
+      
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "My Section Name",
+    "settings": [
+    {
+    "type":"text",
+    "label":"Your Heading for the section",
+    "id":"heading"
+    },
+    {
+    "type":"richtext",
+    "label":"Description",
+    "id":"description"
+    },
+    {
+      "type": "checkbox",
+      "id": "flip",
+      "default": true,
+      "label": "Reverse image and text?"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    },
+    {
+      "type":"color",
+      "label":"Button Border Color",
+      "id":"button_border_color"
+    },
+    {
+      "type":"color",
+      "label":"Button Text Color",
+      "id":"text_color"
+    }
+    ],
+    "blocks":[
+	    {
+		    "type":"image",
+		    "name":"image block",
+		    "settings":[
+			    {
+					"type":"image_picker",
+				    "label":"your image",
+				    "id":"image"
+				}
+		    ]
+	    }
+    ],
+    "presets":[
+	    {
+        "category":"image",
+        "name":"My Section Name"
+	    }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
