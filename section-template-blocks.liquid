@@ -2,7 +2,8 @@
 <!-- We use section.id so we don't have to use inline css. This enables us to have multiple duplicate sections on the same page with different css settings. -->
 <style>
 .{{ section.id }}--outer{
-
+   padding-top:{{ section.settings.padding_top }}px;
+   padding-bottom:{{ section.settings.padding_bottom }}px;
 }
 .{{ section.id }}--container{
 
